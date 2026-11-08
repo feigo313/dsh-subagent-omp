@@ -1,10 +1,13 @@
 # dsh-subagent-omp
 
 DeepSeek Harness plugin: delegate one task at a time to your locally installed
-[OMP](https://github.com/can1357/oh-my-pi) agent. The spawned `omp` child runs
-with **its own `~/.omp` configuration** — its provider, model bindings, MCP
-servers, and approval settings are whatever your OMP installation already has.
-This plugin never configures or overrides them.
+[OMP (oh-my-pi)](https://github.com/can1357/oh-my-pi) agent. The spawned `omp`
+child runs with **its own `~/.omp` configuration** — its provider, model
+bindings, MCP servers, and approval settings are whatever your OMP
+installation already has. This plugin never configures or overrides them.
+
+The plugin icon is adapted from the Oh My Pi project logo
+(`assets/icon.svg`, MIT, © Mario Zechner, Can Bölük, Stencil Labs, Inc.).
 
 ## What it does
 
@@ -103,5 +106,7 @@ The bundle exposes a settings entry (`subagent-omp`) with:
 
 ## License
 
-MIT — see [LICENSE](LICENSE). `vendor/out-of-process.js` contains MIT-licensed
-code from `@deepseek-ai/dsh-subagent`; attribution is included there.
+MIT — see [LICENSE](LICENSE). Third-party code and assets in this bundle carry
+their own attribution: `vendor/out-of-process.js` contains MIT-licensed code
+from `@deepseek-ai/dsh-subagent`, and `icon.svg` is adapted from the
+MIT-licensed Oh My Pi project logo (`assets/icon.svg`).

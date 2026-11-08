@@ -22,8 +22,14 @@ SOFTWARE.
 
 ---
 
-Third-party code:
+Third-party code and assets:
 
-The file `vendor/out-of-process.js` contains code copied from
-`@deepseek-ai/dsh-subagent` (DeepSeek AI), licensed under the MIT License.
-It is redistributed here under the terms of that license.
+- The file `vendor/out-of-process.js` contains code copied from
+  `@deepseek-ai/dsh-subagent` (Copyright (c) 2026 DeepSeek AI), licensed
+  under the MIT License. It is redistributed here under the terms of that
+  license.
+- The file `icon.svg` is adapted from the Oh My Pi project logo
+  (`assets/icon.svg` in oh-my-pi, Copyright (c) 2025 Mario Zechner;
+  Copyright (c) 2025-2026 Can Bölük; Copyright (c) 2026 Stencil Labs, Inc.),
+  licensed under the MIT License. It is redistributed here under the terms
+  of that license.

@@ -33,5 +33,13 @@
     "@deepseek-ai/dsh-subagent": "0.2.2-rc.1",
     "@deepseek-ai/dsh-subprocess": "0.2.2-rc.1",
     "@deepseek-ai/dsh-timeout": "0.2.2-rc.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feigo313/dsh-subagent-omp.git"
+  },
+  "homepage": "https://github.com/feigo313/dsh-subagent-omp#readme",
+  "bugs": {
+    "url": "https://github.com/feigo313/dsh-subagent-omp/issues"
   }
 }
