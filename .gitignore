@@ -1,2 +1,5 @@
 # Runtime snapshots (local-only development log, not for publication)
 PROGRESS.md
+
+# Local investigation tarballs (npm pack artifacts, not part of the bundle)
+deepseek-ai-*.tgz
