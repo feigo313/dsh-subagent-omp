@@ -21,11 +21,33 @@
     "icon.svg",
     "locale/*.json",
     "lib/index.js",
-    "cordis.patch.yml"
+    "vendor/out-of-process.js",
+    "vendor/types.js",
+    "vendor/node_modules/@deepseek-ai/schemastery",
+    "vendor/node_modules/@deepseek-ai/cosmokit",
+    "vendor/node_modules/@deepseek-ai/dsh-brand",
+    "CHANGELOG.md",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
   ],
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "subagent",
+    "agent-team",
+    "omp",
+    "oh-my-pi",
+    "local-model"
+  ],
+  "author": "MYCAIGC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "0.2.2-rc.1",
-    "@deepseek-ai/schemastery": "~3.19.0",
     "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.1"
   },
   "peerDependencies": {

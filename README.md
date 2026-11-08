@@ -77,13 +77,41 @@ comparison or a task backlog.
 
 ## Install
 
-In DeepSeek Harness:
+### Method one: plugin market (Discover tab)
+
+Once listed on [awesome-dsh-plugin](https://awesome-dsh-plugin.com/), search
+for `dsh-subagent-omp` in the Harness plugin market (Plugins → Discover) and
+install it there.
+
+### Method two: npm
+
+```bash
+npm install -g dsh-subagent-omp
+```
+
+Then point the Harness at the package directory, or install with the
+`plugin_manager` tool:
 
 ```
-Plugin Manager → Install from directory → select this checkout
+plugin_manager install_bundle --target <global-node_modules>/dsh-subagent-omp
 ```
 
-or programmatically: `plugin_manager` with `action: install_bundle` and the
+New npm releases are subject to the harness profile's fresh-release policy
+(`minimumReleaseAge`); a just-published version becomes installable about an
+hour after publish.
+
+### Method three: GitHub Release
+
+Download the prebuilt tarball from the
+[Releases page](https://github.com/feigo313/dsh-subagent-omp/releases) and
+install it with `plugin_manager` `install_bundle` pointed at the `.tgz` file,
+or pin the dependency in a profile `package.json` as a local `file:` path
+(`file:` entries get a lockfile integrity, URL entries do not).
+
+### Development: local checkout
+
+In the Harness plugin manager, choose "Install from directory" and select
+this checkout; or `plugin_manager` with `action: install_bundle` and the
 absolute path of this directory.
 
 ## Configuration
