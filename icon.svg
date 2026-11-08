@@ -1,0 +1,15 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dsh_plugin_omp_a" x1="18" y1="4" x2="18" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C6CF6"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="28" height="28" rx="7" fill="url(#dsh_plugin_omp_a)"/>
+  <circle cx="18" cy="18" r="9.5" stroke="#FFFFFF" stroke-width="2.2" fill="none"/>
+  <circle cx="18" cy="18" r="3.2" fill="#FFFFFF"/>
+  <path d="M18 4.5 V9" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M18 27 V31.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M4.5 18 H9" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M27 18 H31.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

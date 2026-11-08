@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OMP subagent",
+    "description": "Delegate one task to the local OMP agent, which runs with its own ~/.omp configuration and model bindings. Tasks run one at a time."
+  }
+}

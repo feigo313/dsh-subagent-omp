@@ -1,0 +1,9 @@
+- insert:
+    - id: subagent-omp
+      name: dsh-subagent-omp
+    - id: tool-subagent-omp
+      name: '@deepseek-ai/dsh-tool-subagent'
+      config:
+        provider: omp
+        toolName: subagent_omp
+        maxDepth: provider-managed
