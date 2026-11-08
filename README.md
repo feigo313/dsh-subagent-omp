@@ -22,6 +22,56 @@ This plugin never configures or overrides them.
   and `@deepseek-ai/dsh-subagent-claude-code` bundles: the child cannot receive
   follow-up messages, and the run leaves no OMP session on disk.
 
+## When to use it
+
+Install this Profile Bundle when a delegated task should run as a fresh,
+unattended OMP session in the parent Session's workspace — typically to spend a
+local or differently-metered model instead of the harness's own LLM route.
+Each delegation uses one self-contained text task and returns only the selected
+answer or a safe failure diagnostic. Native OMP configuration and
+authentication remain authoritative. Choose it when running on the OMP
+runtime's own model matters more than continuation or harness-side tools.
+
+Routing between the sibling delegation tools is the model's choice at call
+time; the tool description carries the same one-shot wording as the official
+product providers, so a delegation goes to OMP when the user names it, or when
+the model judges an offload suitable for the OMP runtime. There is no
+automatic catch-all: `subagent` (in-process), `subagent_fork`
+(context-inheriting), and `subagent_omp` coexist and none of them claims
+another's tasks.
+
+## Known Limitations and Deferred Work
+
+These limits define when this provider is a poor fit or needs special
+operational care. They are current package constraints, not a general OMP
+comparison or a task backlog.
+
+- **One fresh process and turn per run** — there is no continuation, resume,
+  pooling, progress stream, or OMP-session persistence (`--no-session`).
+- **Static instance selection** — the Profile row fixes the provider name and
+  tool binding; calls cannot choose or change a model dynamically (the child
+  inherits whatever `~/.omp` binds).
+- **Authentication and configuration remain native** — the Bundle spawns the
+  CLI but does not create accounts, log in, or rewrite OMP settings; a missing
+  API key or unreachable provider surfaces as a child run failure with the
+  child's stderr tail as the diagnostic.
+- **The `omp` executable is required at delegation time** — resolution prefers
+  the npm package's bin entry and falls back to `omp` on the harness host's
+  PATH; there is no bundled OMP payload.
+- **Runs are serialized** — a second delegation queues until the previous
+  child's run settles; parallel fan-out through this provider is not possible.
+- **No human approval path** — the child runs with whatever approval mode the
+  user's OMP configuration grants; this Bundle adds no interaction channel.
+- **Assistant payload is the selected answer text only** — reasoning,
+  intermediate messages, tool traffic, and usage remain outside the parent
+  Session; failed runs expose a safe diagnostic instead.
+- **No optional shared capabilities** — `agentPreset`, `agentOptions`, output
+  schemas, and harness depth enforcement are rejected by the shared service
+  for this provider.
+- **No wall-clock timeout beyond `maxTime`** — the child is terminated at the
+  configured deadline, and files or external systems changed before that point
+  are not restored.
+
 ## Install
 
 In DeepSeek Harness:
