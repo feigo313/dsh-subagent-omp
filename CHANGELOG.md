@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Offline regression suites under `test/`: provider lifecycle, output
+  extraction, cost-cap mapping, and the serial-queue ordering contract
+  (`npm test`).
+- GitHub Actions CI: syntax checks, manifest validation, offline suites,
+  and `npm pack` integrity on every push and pull request.
+- Queue watchdog safety: the serialized run aborts a child that outlives
+  `maxTime` plus a 60 s grace, so a hung child cannot block later
+  delegations.
+- Bounded stdout capture: child JSONL output is capped at 2 MiB (ring
+  window keeps the tail) so long runs cannot grow memory without bound.
+- Raised the default `maxTime` to `2h`: local engines are unmetered, and
+  the previous 30 m default truncated legitimate long tasks.
+
 ## [0.1.0] - 2026-11-08
 
 ### Added

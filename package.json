@@ -63,5 +63,8 @@
   "homepage": "https://github.com/feigo313/dsh-subagent-omp#readme",
   "bugs": {
     "url": "https://github.com/feigo313/dsh-subagent-omp/issues"
+  },
+  "scripts": {
+    "test": "node test/provider.test.mjs && node test/edge-cases.test.mjs"
   }
 }
