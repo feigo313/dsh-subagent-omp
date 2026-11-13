@@ -7,16 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
+## [0.1.2] - 2026-11-13
 
-- The offline watchdog/cap regression suite is now wired into `npm test` and
-  CI; previously it existed in `test/` but no command ran it.
+### Changed
+
+- Compatibility is now declared once as `engines.dsh: ">=0.2.2-rc.1 <0.3.0"`.
+  The host gates activation on that field alone (prerelease-aware semver), so a
+  DeepSeek Harness `-rc` or patch bump inside the `0.2.x` line no longer
+  unmounts the provider and silently removes the `subagent_omp` tool — the
+  exact-pin peers used to do precisely that on `0.2.2-rc.3`. `npm test` now
+  guards this contract in `test/compat.test.mjs`. The range stops at `0.3.0`,
+  where the seam is re-checked by hand.
+- Dependency and peer pins moved to `0.2.2-rc.3`, matching the runtime this
+  release was verified against. The seam files are byte-identical across
+  `0.2.2-rc.1` → `rc.3`, so no code change was required.
 
 ### Added
 
 - Offline regression suites under `test/`: provider lifecycle, output
-  extraction, cost-cap mapping, and the serial-queue ordering contract
-  (`npm test`).
+  extraction, cost-cap mapping, the serial-queue ordering contract, and the
+  compatibility-range contract (`npm test`).
 - GitHub Actions CI: syntax checks, manifest validation, offline suites,
   and `npm pack` integrity on every push and pull request.
 - Queue watchdog safety: the serialized run aborts a child that outlives
@@ -25,7 +35,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bounded stdout capture: child JSONL output is capped at 2 MiB (ring
   window keeps the tail) so long runs cannot grow memory without bound.
 - Raised the default `maxTime` to `2h`: local engines are unmetered, and
-  the previous 30 m default truncated legitimate long tasks.
+  the previous 30 m default truncated legitimate long tasks. (Both this and
+  the two items above shipped in the `0.1.1` code but were never listed in a
+  release section.)
+
+### Fixed
+
+- The offline watchdog/cap regression suite is now wired into `npm test` and
+  CI; previously it existed in `test/` but no command ran it.
+- README reported the `maxTime` default as `30m`; the shipped default is `2h`.
 
 ## [0.1.1] - 2026-11-13
 

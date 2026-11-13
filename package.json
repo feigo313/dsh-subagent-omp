@@ -1,11 +1,14 @@
 {
   "name": "dsh-subagent-omp",
   "description": "One-shot OMP subagent provider: each delegation spawns the local `omp --print --mode json` CLI, which runs with the user's own ~/.omp configuration and model bindings; runs are serialized so a single-session local engine is never oversubscribed",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "lib/index.js",
   "icon": "./icon.svg",
   "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -48,13 +51,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.2"
+    "@deepseek-ai/dsh-tool-subagent": ">=0.2.2-rc.1 <0.3.0"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "~4.1.0",
-    "@deepseek-ai/dsh-subagent": "0.2.2-rc.2",
-    "@deepseek-ai/dsh-subprocess": "0.2.2-rc.2",
-    "@deepseek-ai/dsh-timeout": "0.2.2-rc.2"
+    "@deepseek-ai/cordis": ">=4.1.0 <5.0.0",
+    "@deepseek-ai/dsh-subagent": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/dsh-subprocess": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/dsh-timeout": ">=0.2.2-rc.1 <0.3.0"
   },
   "repository": {
     "type": "git",
@@ -65,6 +68,6 @@
     "url": "https://github.com/feigo313/dsh-subagent-omp/issues"
   },
   "scripts": {
-    "test": "node test/provider.test.mjs && node test/edge-cases.test.mjs && node test/watchdog.test.mjs"
+    "test": "node test/provider.test.mjs && node test/edge-cases.test.mjs && node test/watchdog.test.mjs && node test/compat.test.mjs"
   }
 }

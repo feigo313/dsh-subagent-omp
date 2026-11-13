@@ -27,6 +27,7 @@ jobs:
           node test/provider.test.mjs
           node test/edge-cases.test.mjs
           node test/watchdog.test.mjs
+          node test/compat.test.mjs
       - name: Pack integrity
         run: |
           npm pack --dry-run

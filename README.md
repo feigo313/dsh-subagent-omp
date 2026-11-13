@@ -121,14 +121,17 @@ The bundle exposes a settings entry (`subagent-omp`) with:
 | Key | Default | Meaning |
 | --- | --- | --- |
 | `providerName` | `omp` | Registry name of the provider. |
-| `maxTime` | `30m` | Whole-run deadline passed to the child as `--max-time` (`<number>[s\|m\|h]`). |
+| `maxTime` | `2h` | Whole-run deadline passed to the child as `--max-time` (`<number>[s\|m\|h]`). |
 | `env` | `{}` | Extra environment entries merged onto the scrubbed parent environment. |
 | `disposeGraceMs` | `3000` | Termination grace for the managed child process. |
 
 ## Requirements
 
 - An `omp` executable resolvable from the harness host (PATH or npm package).
-- DeepSeek Harness `0.2.2-rc.2` (the subagent seam is provided by the host;
+- DeepSeek Harness `>=0.2.2-rc.1 <0.3.0` — declared once through
+  `engines.dsh`, which is what the host gates plugin activation on, so a DSH
+  release-candidate or patch bump inside that range does not require a new
+  plugin release (the subagent seam is provided by the host;
   runtime-only dependencies ship inside this bundle's `vendor/` tree so a
   directory-linked install resolves everywhere).
 
