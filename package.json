@@ -65,6 +65,6 @@
     "url": "https://github.com/feigo313/dsh-subagent-omp/issues"
   },
   "scripts": {
-    "test": "node test/provider.test.mjs && node test/edge-cases.test.mjs"
+    "test": "node test/provider.test.mjs && node test/edge-cases.test.mjs && node test/watchdog.test.mjs"
   }
 }

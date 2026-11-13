@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- The offline watchdog/cap regression suite is now wired into `npm test` and
+  CI; previously it existed in `test/` but no command ran it.
+
 ### Added
 
 - Offline regression suites under `test/`: provider lifecycle, output
