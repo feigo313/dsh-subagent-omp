@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-omp",
   "description": "One-shot OMP subagent provider: each delegation spawns the local `omp --print --mode json` CLI, which runs with the user's own ~/.omp configuration and model bindings; runs are serialized so a single-session local engine is never oversubscribed",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "lib/index.js",
   "icon": "./icon.svg",
@@ -48,13 +48,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.1"
+    "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.2"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "~4.1.0",
-    "@deepseek-ai/dsh-subagent": "0.2.2-rc.1",
-    "@deepseek-ai/dsh-subprocess": "0.2.2-rc.1",
-    "@deepseek-ai/dsh-timeout": "0.2.2-rc.1"
+    "@deepseek-ai/dsh-subagent": "0.2.2-rc.2",
+    "@deepseek-ai/dsh-subprocess": "0.2.2-rc.2",
+    "@deepseek-ai/dsh-timeout": "0.2.2-rc.2"
   },
   "repository": {
     "type": "git",

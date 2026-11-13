@@ -22,6 +22,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Raised the default `maxTime` to `2h`: local engines are unmetered, and
   the previous 30 m default truncated legitimate long tasks.
 
+## [0.1.1] - 2026-11-13
+
+### Changed
+
+- Target DeepSeek Harness `0.2.2-rc.2`: `@deepseek-ai/dsh-tool-subagent`
+  (dependency) and `@deepseek-ai/dsh-subagent` / `dsh-subprocess` /
+  `dsh-timeout` (peers) bumped from `0.2.2-rc.1` to `0.2.2-rc.2`. No code
+  changes were required — the vendored out-of-process helpers and the
+  `SubagentProvider` seam are byte-identical between the two releases.
+- Documentation version references updated to match.
+
 ## [0.1.0] - 2026-11-08
 
 ### Added
@@ -43,3 +54,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Oh My Pi project logo.
 
 [0.1.0]: https://github.com/feigo313/dsh-subagent-omp/releases/tag/v0.1.0
+[0.1.1]: https://github.com/feigo313/dsh-subagent-omp/releases/tag/v0.1.1

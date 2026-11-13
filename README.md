@@ -128,7 +128,7 @@ The bundle exposes a settings entry (`subagent-omp`) with:
 ## Requirements
 
 - An `omp` executable resolvable from the harness host (PATH or npm package).
-- DeepSeek Harness `0.2.2-rc.1` (the subagent seam is provided by the host;
+- DeepSeek Harness `0.2.2-rc.2` (the subagent seam is provided by the host;
   runtime-only dependencies ship inside this bundle's `vendor/` tree so a
   directory-linked install resolves everywhere).
 
